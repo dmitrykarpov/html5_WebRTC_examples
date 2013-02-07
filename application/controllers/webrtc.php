@@ -14,6 +14,9 @@ class webrtc extends CI_Controller {
          $this->load->database();
     }
     public function index(){
+        echo "<h3>HTML5 geolocation:</h3>";
+        echo anchor(array('webrtc','html5geo1',""),"html5 geolocation example (1)")."<br>";
+        echo "<h3>WebRTC:</h3>";
         echo anchor(array('webrtc','polling_ajax',"empty_table"),"clear prev. chan conersation messages")."<br>";
         echo anchor(array('webrtc','webrtc_bob'),"Bob (callee) ANSWER")."<br>";
         echo anchor(array('webrtc','webrtc_alice'),"Alice (caller) REQUEST")."<br>";
@@ -22,6 +25,9 @@ class webrtc extends CI_Controller {
         echo anchor(array('webrtc','webrtc_camera1'),"camera demo(1)")."<br>";
         echo anchor(array('webrtc','webrtc_camera2'),"camera demo(2)")."<br>";
        // phpinfo();
+    }
+    public function html5geo1(){
+        $this->load->view('html5geo1',array());
     }
      public function webrtc_alice(){
         $this->load->view('webrtc_alice',array());
